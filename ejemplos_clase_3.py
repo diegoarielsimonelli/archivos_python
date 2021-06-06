@@ -34,8 +34,7 @@ def agregar_datos():
 
 
 def modificar_datos():
-    # Los archivos CSV no tiene una función para modificar
-    # un valor ya ingresado, las operaciones que pueden
+    # Los archivos CSV no 
     # realizarse son las nombradas hasta ahora
     # --> leer el contenido (sin editar el archivo)
     # --> crear un archivo vacio y sumarle contenido

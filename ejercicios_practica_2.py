@@ -10,7 +10,7 @@
 # Ejercicios con archivos
 
 import csv
-
+import re
 
 def ej3():
     print('Ejercicio de archivos CSV 1º')
@@ -28,7 +28,23 @@ def ej3():
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
     
+    with open('stock.csv') as stock:
+        
+        data = list(csv.DictReader(stock))
+    lista= []
+    Lista=[]
+    for i in data:
+        lista.append(i["tornillos"])
+    print("tornillos:\n",lista)
 
+    for a in lista:         
+        a = int(a)   
+        Lista.append(a)
+        
+    
+    cantidad_tornillos = sum(Lista)
+    print("Cantidad de tornillos:", cantidad_tornillos)
+        
 
 def ej4():
     print('Ejercicios con archivos CSV 2º')
@@ -47,7 +63,27 @@ def ej4():
     # utilizando "try except", tema que se verá la clase que viene.
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    with open('propiedades.csv') as depto:
+        
+        data = list(csv.DictReader(depto))
+        i = 0
+        dos_ambientes = 0
+        tres_ambientes = 0
 
+    for fila in data:
+        try:
+            ambientes = int(fila["ambientes"])
+        except:
+            print("No hay ningun valor guardado en la fila:", i)
+        i += 1
+
+        if ambientes == 2:
+            dos_ambientes += 1
+        elif ambientes == 3:
+            tres_ambientes += 1
+
+    print("Hay :", dos_ambientes, ", dos ambientes en total")
+    print("Hay :", tres_ambientes,", tres ambientes en total")
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
