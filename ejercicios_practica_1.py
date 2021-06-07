@@ -68,11 +68,11 @@ def ej2():
             print("¿Cuantos/as",ingreso, "desea agregar?\n")
             cantidad = int(input()) 
             strock[ingreso] += cantidad
-            lista.append(strock)
+            
         else:
             print("No tenemos ese producto en stock, intente de nuevo")
     
-    print("el stock total es:",lista)
+    print("el stock total es:",strock)
     
     # Paso 2:
     # Dentro de ese bucle consultar al usuario por consola
